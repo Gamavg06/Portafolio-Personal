@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae | Gamaliel Velázquez Galicia</title>
+    <meta name="description" content="Currículum profesional de Gamaliel Velázquez Galicia. Jr. Developer & UI Designer. Experiencia en desarrollo C#, .NET, diseño UX/UI y redes." />
+    <meta name="keywords" content="Currículum, Gamaliel Velázquez, C#, .NET, SQLite, redes, UI/UX" />
+    <meta name="author" content="Gamaliel Velázquez Galicia" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Curriculum Vitae | Gamaliel Velázquez Galicia" />
+    <meta property="og:description" content="Jr. Developer & UI Designer. Experiencia en desarrollo con C# y .NET, diseño UI/UX y configuración de redes." />
+    <meta property="og:url" content="https://gamavg06.github.io/cv.html" />
+    <meta property="og:image" content="https://gamavg06.github.io/Hotel.png" />
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ebf8ff;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+        }
+
+        /* Columna Izquierda (Sidebar) */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 40px 30px;
+        }
+
+        .profile-header h1 {
+            font-size: 1.8rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .profile-header h2 {
+            font-size: 1.05rem;
+            color: #90cdf4;
+            margin-bottom: 30px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 15px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: #ebf8ff;
+        }
+
+        .contact-item {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #90cdf4;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .sidebar-list li::before {
+            content: "•";
+            color: #90cdf4;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Columna Derecha (Main Content) */
+        .main-content {
+            padding: 40px;
+            background-color: #ffffff;
+        }
+
+        .main-section {
+            margin-bottom: 35px;
+        }
+
+        .main-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .profile-desc {
+            font-size: 0.95rem;
+            color: #4a5568;
+            text-align: justify;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .timeline-role {
+            font-style: italic;
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 600;
+            background: var(--bg-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tech-stack {
+            font-size: 0.85rem;
+            color: #2c5282;
+            background: #ebf8ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .item-description {
+            list-style: none;
+            font-size: 0.9rem;
+            color: #4a5568;
+            padding-left: 15px;
+        }
+
+        .item-description li {
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .item-description li::before {
+            content: "—";
+            color: var(--secondary-color);
+            position: absolute;
+            left: -15px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .cert-category h4 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 8px;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 10px;
+            }
+            .sidebar {
+                padding: 30px 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .timeline-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        /* Estilos de Impresión */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                padding: 0 !important;
+            }
+            .cv-container {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                display: grid !important;
+                grid-template-columns: 320px 1fr !important;
+            }
+            .sidebar {
+                background-color: var(--primary-color) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color: #ffffff !important;
+            }
+            .sidebar-title {
+                border-bottom-color: var(--secondary-color) !important;
+                color: #ebf8ff !important;
+            }
+            .contact-item strong {
+                color: #90cdf4 !important;
+            }
+            .profile-header h2 {
+                color: #90cdf4 !important;
+                border-bottom-color: var(--secondary-color) !important;
+            }
+            .sidebar-list li::before {
+                color: #90cdf4 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- BOTONES FLOTANTES NO IMPRIMIBLES -->
+<div class="no-print" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; gap: 10px;">
+    <a href="index.html" style="background-color: var(--primary-color); color: white; border: none; padding: 12px 20px; font-size: 0.95rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px; font-family: inherit; text-decoration: none; font-weight: 500; transition: transform 0.2s, background-color 0.2s;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Volver al Portafolio
+    </a>
+    <button onclick="window.print()" style="background-color: var(--secondary-color); color: white; border: none; padding: 12px 24px; font-size: 0.95rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 8px; font-family: inherit; font-weight: 500; transition: transform 0.2s, background-color 0.2s;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Guardar en PDF / Imprimir
+    </button>
+</div>
+
+<div class="cv-container">
+    
+    <!-- COLUMNA IZQUIERDA -->
+    <aside class="sidebar">
+        <div class="profile-header">
+            <h1>Gamaliel Velázquez Galicia</h1>
+            <h2>Jr. Developer & UI Designer<br>Team Lead</h2>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">Contacto</div>
+            <div class="contact-item">
+                <strong>Ubicación</strong>
+                Nopalucan de la Granja, Puebla, México
+            </div>
+            <div class="contact-item">
+                <strong>Correo Electrónico</strong>
+                gmlvega0025@gmail.com
+            </div>
+            <div class="contact-item">
+                <strong>Teléfono</strong>
+                223 131 6588
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">Idiomas</div>
+            <ul class="sidebar-list">
+                <li>Español (Nativo)</li>
+                <li>Inglés (B1 - Intermedio)</li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">Educación</div>
+            <div class="contact-item" style="margin-bottom: 0;">
+                <strong style="white-space: normal; line-height: 1.3; margin-bottom: 5px;">Ingeniería en Tecnologías de la Información e Innovación Digital</strong>
+                Universidad Tecnológica Bilingüe Internacional y Sustentable de Puebla (UTBIS)<br>
+                <span style="font-size: 0.8rem; color: #90cdf4; font-style: italic;">Actualmente cursando</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- COLUMNA DERECHA -->
+    <main class="main-content">
+        
+        <section class="main-section">
+            <div class="main-title">Perfil Profesional</div>
+            <p class="profile-desc">
+                Estudiante de Ingeniería en Tecnologías de la Información con un enfoque híbrido en desarrollo de software, diseño visual e infraestructura de redes. Líder de equipo experimentado con una sólida base en desarrollo con C# y .NET, diseño UI/UX y redes. Profesional altamente adaptable con experiencia práctica en diversos entornos de trabajo, desde la construcción hasta el comercio minorista, demostrando una fuerte ética de trabajo, colaboración en equipo y habilidades para la resolución de problemas.
+            </p>
+        </section>
+
+        <section class="main-section">
+            <div class="main-title">Proyectos Destacados</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Bioplant — Videojuego Educativo</div>
+                </div>
+                <div class="timeline-role">Rol: Líder de Proyecto (Team Lead)</div>
+                <ul class="item-description">
+                    <li>Dirigió un equipo multidisciplinario en el desarrollo de un videojuego original.</li>
+                    <li>Gestionó los cronogramas del proyecto, la distribución de tareas y la coordinación del equipo.</li>
+                    <li>Supervisó la integración de las mecánicas de juego, los activos visuales y la implementación técnica.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">LearnMore — Plataforma de Recursos de Estudio</div>
+                </div>
+                <div class="timeline-role">Rol: Desarrollador Full-Stack</div>
+                <div class="tech-stack">Tecnologías: JavaScript, HTML, CSS, Supabase / Firebase, Arquitectura Web</div>
+                <ul class="item-description">
+                    <li>Diseñó y desarrolló una plataforma web centralizada para organizar, almacenar y optimizar el acceso a recursos de estudio para la comunidad universitaria.</li>
+                    <li>Estructuró eficientemente la lógica del sitio y la persistencia de datos para mejorar el acceso de los usuarios a los materiales académicos.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Sistema de Reserva de Hoteles</div>
+                </div>
+                <div class="timeline-role">Rol: Desarrollador de Software</div>
+                <div class="tech-stack">Tecnologías: C#, .NET 9, SQLite</div>
+                <ul class="item-description">
+                    <li>Desarrolló una aplicación de escritorio completa para la gestión de reservaciones.</li>
+                    <li>Implementó una base de datos SQLite para optimizar la administración de registros.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Tic-Tac-Toe — Juego de Mesa</div>
+                </div>
+                <div class="timeline-role">Rol: Desarrollador de Software</div>
+                <div class="tech-stack">Tecnologías: C#, .NET, Programación Orientada a Objetos (POO)</div>
+                <ul class="item-description">
+                    <li>Desarrolló una aplicación de escritorio interactiva del clásico juego de tablero.</li>
+                    <li>Implementó la lógica algorítmica para la validación de victorias, empates y el control de turnos de los jugadores.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="main-section">
+            <div class="main-title">Experiencia Laboral</div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Carnicería La Juquila</div>
+                    <span class="timeline-date">Junio 2026 – Actualidad</span>
+                </div>
+                <div class="timeline-role">Ayudante General</div>
+                <ul class="item-description">
+                    <li>Eficiente servicio al cliente y gestión de pedidos.</li>
+                    <li>Control de inventario y organización de productos para asegurar los estándares de calidad e higiene.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Grupo Constructor Gori y Asociados</div>
+                    <span class="timeline-date">Abril 2026 – Mayo 2026</span>
+                </div>
+                <div class="timeline-role">Ayudante General (Ciudad Modelo)</div>
+                <ul class="item-description">
+                    <li>Soporte operativo en actividades de construcción y cumplimiento de los plazos del proyecto.</li>
+                    <li>Coordinación directa con el equipo de construcción para el manejo seguro de materiales.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div class="timeline-title">Grupo Constructor Peralta</div>
+                    <span class="timeline-date">Julio 2025 – Agosto 2025</span>
+                </div>
+                <div class="timeline-role">Ayudante General (IMSS Centro Vacacional La Malinche)</div>
+                <ul class="item-description">
+                    <li>Asistencia en tareas generales de construcción y mantenimiento dentro del proyecto del centro vacacional.</li>
+                    <li>Estricta aplicación de las normas de seguridad industrial y organización del espacio de trabajo.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="main-section">
+            <div class="main-title">Certificaciones y Logros</div>
+            
+            <div class="cert-grid">
+                <div class="cert-category">
+                    <h4>Tecnología e Informática</h4>
+                    <ul class="item-description">
+                        <li>Introducción a la Iniciación al Desarrollo con IA – BIG School / Mouredev (Junio 2026)</li>
+                        <li>Introducción a la Ingeniería en Inteligencia Artificial – IF Iberoamerican Technology Foundation (Mayo 2026)</li>
+                        <li>Diseñador de Experiencia de Usuario (UX) – Aprende.org (Octubre 2025)</li>
+                        <li>Huella Digital (Octubre 2025)</li>
+                        <li>Networking Basics – Cisco Networking Academy (Marzo 2025)</li>
+                        <li>Certificación en Trabajo en Equipo (Mayo 2026)</li>
+                    </ul>
+                </div>
+                
+                <div class="cert-category" style="margin-top: 15px;">
+                    <h4>Medio Ambiente y Especializadas</h4>
+                    <ul class="item-description">
+                        <li>Gobernanza del Aire (Julio 2026)</li>
+                        <li>Cálculo de Huella Hídrica (Junio 2025)</li>
+                        <li>Cálculo de Huella Ecológica (Marzo 2025)</li>
+                        <li>Cálculo de Huella de Carbono (Febrero 2025)</li>
+                        <li>Controlador de Plagas Urbanas (Diciembre 2025)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>

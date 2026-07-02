@@ -250,6 +250,7 @@
             body {
                 background-color: #ffffff !important;
                 padding: 0 !important;
+                margin: 0 !important;
             }
             .cv-container {
                 box-shadow: none !important;
@@ -257,13 +258,33 @@
                 max-width: 100% !important;
                 margin: 0 !important;
                 display: grid !important;
-                grid-template-columns: 320px 1fr !important;
+                grid-template-columns: 290px 1fr !important;
             }
             .sidebar {
                 background-color: var(--primary-color) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 color: #ffffff !important;
+                padding: 30px 20px !important;
+            }
+            .main-content {
+                padding: 30px 35px !important;
+            }
+            .main-section {
+                margin-bottom: 25px !important;
+            }
+            .timeline-item {
+                margin-bottom: 18px !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .sidebar-section {
+                margin-bottom: 25px !important;
+            }
+            .profile-header h2 {
+                color: #90cdf4 !important;
+                border-bottom-color: var(--secondary-color) !important;
+                margin-bottom: 20px !important;
             }
             .sidebar-title {
                 border-bottom-color: var(--secondary-color) !important;
@@ -271,10 +292,6 @@
             }
             .contact-item strong {
                 color: #90cdf4 !important;
-            }
-            .profile-header h2 {
-                color: #90cdf4 !important;
-                border-bottom-color: var(--secondary-color) !important;
             }
             .sidebar-list li::before {
                 color: #90cdf4 !important;
@@ -338,6 +355,31 @@
                 <strong style="white-space: normal; line-height: 1.3; margin-bottom: 5px;">Ingeniería en Tecnologías de la Información e Innovación Digital</strong>
                 Universidad Tecnológica Bilingüe Internacional y Sustentable de Puebla (UTBIS)<br>
                 <span style="font-size: 0.8rem; color: #90cdf4; font-style: italic;">Actualmente cursando</span>
+            </div>
+        </div>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">Certificaciones y Logros</div>
+            <div style="margin-bottom: 15px;">
+                <strong style="display: block; color: #90cdf4; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 6px;">Tecnología</strong>
+                <ul class="sidebar-list" style="font-size: 0.8rem; line-height: 1.4;">
+                    <li>Desarrollo con IA – BIG School / Mouredev (2026)</li>
+                    <li>Ingeniería en IA – IF Iberoamerican Tech (2026)</li>
+                    <li>Diseñador UX – Aprende.org (2025)</li>
+                    <li>Huella Digital (2025)</li>
+                    <li>Networking Basics – Cisco (2025)</li>
+                    <li>Trabajo en Equipo (2026)</li>
+                </ul>
+            </div>
+            <div>
+                <strong style="display: block; color: #90cdf4; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 6px;">Medio Ambiente y Otros</strong>
+                <ul class="sidebar-list" style="font-size: 0.8rem; line-height: 1.4;">
+                    <li>Gobernanza del Aire (2026)</li>
+                    <li>Cálculo de Huella Hídrica (2025)</li>
+                    <li>Cálculo de Huella Ecológica (2025)</li>
+                    <li>Cálculo de Huella de Carbono (2025)</li>
+                    <li>Controlador de Plagas Urbanas (2025)</li>
+                </ul>
             </div>
         </div>
     </aside>
@@ -444,34 +486,7 @@
             </div>
         </section>
 
-        <section class="main-section">
-            <div class="main-title">Certificaciones y Logros</div>
-            
-            <div class="cert-grid">
-                <div class="cert-category">
-                    <h4>Tecnología e Informática</h4>
-                    <ul class="item-description">
-                        <li>Introducción a la Iniciación al Desarrollo con IA – BIG School / Mouredev (Junio 2026)</li>
-                        <li>Introducción a la Ingeniería en Inteligencia Artificial – IF Iberoamerican Technology Foundation (Mayo 2026)</li>
-                        <li>Diseñador de Experiencia de Usuario (UX) – Aprende.org (Octubre 2025)</li>
-                        <li>Huella Digital (Octubre 2025)</li>
-                        <li>Networking Basics – Cisco Networking Academy (Marzo 2025)</li>
-                        <li>Certificación en Trabajo en Equipo (Mayo 2026)</li>
-                    </ul>
-                </div>
-                
-                <div class="cert-category" style="margin-top: 15px;">
-                    <h4>Medio Ambiente y Especializadas</h4>
-                    <ul class="item-description">
-                        <li>Gobernanza del Aire (Julio 2026)</li>
-                        <li>Cálculo de Huella Hídrica (Junio 2025)</li>
-                        <li>Cálculo de Huella Ecológica (Marzo 2025)</li>
-                        <li>Cálculo de Huella de Carbono (Febrero 2025)</li>
-                        <li>Controlador de Plagas Urbanas (Diciembre 2025)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+
 
     </main>
 </div>

@@ -247,54 +247,111 @@
 
         /* Estilos de Impresión */
         @media print {
-            body {
+            html, body {
                 background-color: #ffffff !important;
+                color: var(--text-dark) !important;
                 padding: 0 !important;
                 margin: 0 !important;
+                font-size: 11.5px !important;
+                line-height: 1.35 !important;
             }
+            
+            @page {
+                margin: 8mm 8mm 8mm 8mm !important;
+            }
+
             .cv-container {
                 box-shadow: none !important;
                 border-radius: 0 !important;
                 max-width: 100% !important;
                 margin: 0 !important;
                 display: grid !important;
-                grid-template-columns: 290px 1fr !important;
+                grid-template-columns: 260px 1fr !important;
+                width: 100% !important;
             }
             .sidebar {
                 background-color: var(--primary-color) !important;
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
                 color: #ffffff !important;
-                padding: 30px 20px !important;
-            }
-            .main-content {
-                padding: 30px 35px !important;
-            }
-            .main-section {
-                margin-bottom: 25px !important;
-            }
-            .timeline-item {
-                margin-bottom: 18px !important;
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-            .sidebar-section {
-                margin-bottom: 25px !important;
-            }
-            .profile-header h2 {
-                color: #90cdf4 !important;
-                border-bottom-color: var(--secondary-color) !important;
-                margin-bottom: 20px !important;
+                padding: 15px 15px !important;
             }
             .sidebar-title {
+                font-size: 0.9rem !important;
+                margin-bottom: 8px !important;
+                padding-bottom: 3px !important;
                 border-bottom-color: var(--secondary-color) !important;
                 color: #ebf8ff !important;
             }
+            .sidebar-section {
+                margin-bottom: 15px !important;
+            }
+            .profile-header h1 {
+                font-size: 1.4rem !important;
+                margin-bottom: 5px !important;
+            }
+            .profile-header h2 {
+                font-size: 0.8rem !important;
+                color: #90cdf4 !important;
+                border-bottom-color: var(--secondary-color) !important;
+                margin-bottom: 12px !important;
+                padding-bottom: 8px !important;
+            }
+            .contact-item {
+                font-size: 0.78rem !important;
+                margin-bottom: 8px !important;
+            }
             .contact-item strong {
                 color: #90cdf4 !important;
+                font-size: 0.72rem !important;
+            }
+            .sidebar-list {
+                font-size: 0.78rem !important;
             }
             .sidebar-list li::before {
                 color: #90cdf4 !important;
+            }
+            
+            .main-content {
+                padding: 15px 25px !important;
+            }
+            .main-section {
+                margin-bottom: 15px !important;
+            }
+            .main-title {
+                font-size: 1rem !important;
+                margin-bottom: 10px !important;
+                padding-bottom: 3px !important;
+            }
+            .profile-desc {
+                font-size: 0.82rem !important;
+            }
+            .timeline-item {
+                margin-bottom: 10px !important;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .timeline-title {
+                font-size: 0.9rem !important;
+            }
+            .timeline-role {
+                font-size: 0.82rem !important;
+                margin-bottom: 3px !important;
+            }
+            .timeline-date {
+                font-size: 0.75rem !important;
+                padding: 1px 4px !important;
+            }
+            .tech-stack {
+                font-size: 0.75rem !important;
+                margin-bottom: 4px !important;
+                padding: 1px 5px !important;
+            }
+            .item-description {
+                font-size: 0.8rem !important;
+            }
+            .item-description li {
+                margin-bottom: 3px !important;
             }
             .no-print {
                 display: none !important;

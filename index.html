@@ -187,6 +187,28 @@
     body.light-mode .theme-toggle-btn .sun-icon { display: none; }
     body.light-mode .theme-toggle-btn .moon-icon { display: block; }
 
+    .lang-toggle-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s, border-color 0.3s, transform 0.2s;
+      outline: none;
+      font-family: var(--font-body);
+    }
+    .lang-toggle-btn:hover {
+      color: var(--cyan);
+      border-color: var(--cyan);
+      transform: scale(1.05);
+    }
+
     /* ── SECTIONS ────────────────────────────── */
     section { position: relative; z-index: 1; }
 
@@ -1019,14 +1041,15 @@
   <nav id="navbar">
     <div class="nav-logo">Port<span>.</span></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portafolio">Portafolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home" data-i18n="nav-home">Inicio</a></li>
+      <li><a href="#about" data-i18n="nav-about">Sobre mí</a></li>
+      <li><a href="#cv" data-i18n="nav-cv">CV</a></li>
+      <li><a href="#services" data-i18n="nav-services">Servicios</a></li>
+      <li><a href="#portafolio" data-i18n="nav-portfolio">Portafolio</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Contacto</a></li>
     </ul>
-    <div style="display: flex; align-items: center; gap: 20px;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <button id="langToggle" class="lang-toggle-btn" aria-label="Cambiar idioma">EN</button>
       <button id="themeToggle" class="theme-toggle-btn" aria-label="Cambiar tema">
         <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -1041,13 +1064,13 @@
   <section id="home">
     <div class="hero-bg-grid"></div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Hello it's me</div>
+      <div class="hero-eyebrow" data-i18n="hero-eyebrow">Hola, soy yo</div>
       <h1 class="hero-name">Gamaliel</h1>
-      <p class="hero-role">And I'm a <span class="typed-wrap" id="typedText"></span></p>
-      <p class="hero-desc">A creative developer passionate about transforming ideas into digital experiences. I combine programming, visual design, and game development to create unique and innovative projects.</p>
+      <p class="hero-role"><span data-i18n="hero-role-prefix">Y soy</span> <span class="typed-wrap" id="typedText"></span></p>
+      <p class="hero-desc" data-i18n="hero-desc">Desarrollador creativo apasionado por transformar ideas en experiencias digitales únicas. Combino programación, diseño visual y desarrollo de videojuegos para crear proyectos innovadores.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Contactar</a>
-        <a href="#portafolio" class="btn-outline">Ver proyectos</a>
+        <a href="#contact" class="btn-primary" data-i18n="hero-contact-btn">Contactar</a>
+        <a href="#portafolio" class="btn-outline" data-i18n="hero-portfolio-btn">Ver proyectos</a>
       </div>
       <div class="social-row">
         <a class="social-btn" href="https://github.com/gamavg06" target="_blank" aria-label="GitHub">
@@ -1069,7 +1092,7 @@
       </div>
       <div class="hero-badge">
         <strong>3+</strong>
-        <span>años de exp.</span>
+        <span data-i18n="hero-exp-badge">años de exp.</span>
       </div>
     </div>
   </section>
@@ -1077,8 +1100,8 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="section-header reveal">
-      <div class="section-label">Conóceme</div>
-      <h2 class="section-title">About <span>me</span></h2>
+      <div class="section-label" data-i18n="about-label">Conóceme</div>
+      <h2 class="section-title"><span data-i18n="about-title-prefix">Sobre</span> <span data-i18n="about-title-span">mí</span></h2>
     </div>
     <div class="about-grid">
       <div class="about-img-wrap reveal">
@@ -1090,11 +1113,11 @@
       </div>
       <div class="about-text reveal">
         <h3>Gamaliel Velazquez</h3>
-        <p>Soy un Programador Creativo y desarrollador multiplataforma especializado en fusionar lógica técnica con diseño innovador. Con experiencia en C# (incluyendo el desarrollo de un videojuego de Tic-Tac-Toe), diseño de wireframes con Balsamiq y gestión de bases de datos con MySQL.</p>
-        <p>Me enfoco en construir soluciones digitales que sean funcionales e intuitivamente diseñadas, demostrando adaptabilidad en diversas plataformas y entornos de desarrollo.</p>
+        <p data-i18n="about-text-p1">Soy un Programador Creativo y desarrollador multiplataforma especializado en fusionar lógica técnica con diseño innovador. Con experiencia en C# (incluyendo el desarrollo de un videojuego de Tic-Tac-Toe), diseño de wireframes con Balsamiq y gestión de bases de datos con MySQL.</p>
+        <p data-i18n="about-text-p2">Me enfoco en construir soluciones digitales que sean funcionales e intuitivamente diseñadas, demostrando adaptabilidad en diversas plataformas y entornos de desarrollo.</p>
         <div class="skills-categories">
           <div class="skills-cat">
-            <h4>Backend & DB</h4>
+            <h4 data-i18n="about-cat-backend">Backend & DB</h4>
             <div class="skills-cat-list">
               <span class="skill-badge"><i class="devicon-csharp-plain"></i> C#</span>
               <span class="skill-badge"><i class="devicon-dotnetline-plain"></i> .NET</span>
@@ -1103,7 +1126,7 @@
             </div>
           </div>
           <div class="skills-cat">
-            <h4>Frontend & Web</h4>
+            <h4 data-i18n="about-cat-frontend">Frontend & Web</h4>
             <div class="skills-cat-list">
               <span class="skill-badge"><i class="devicon-html5-plain"></i> HTML5</span>
               <span class="skill-badge"><i class="devicon-css3-plain"></i> CSS3</span>
@@ -1111,7 +1134,7 @@
             </div>
           </div>
           <div class="skills-cat">
-            <h4>Diseño & Herramientas</h4>
+            <h4 data-i18n="about-cat-tools">Diseño & Herramientas</h4>
             <div class="skills-cat-list">
               <span class="skill-badge"><i class="devicon-figma-plain"></i> UI/UX</span>
               <span class="skill-badge">
@@ -1123,7 +1146,7 @@
             </div>
           </div>
         </div>
-        <a href="#contact" class="btn-outline">Ver más</a>
+        <a href="#contact" class="btn-outline" data-i18n="about-view-more">Ver más</a>
       </div>
     </div>
   </section>
@@ -1131,21 +1154,21 @@
   <!-- CV -->
   <section id="cv">
     <div class="section-header reveal">
-      <div class="section-label">Mi Trayectoria</div>
-      <h2 class="section-title">My <span>CV</span></h2>
+      <div class="section-label" data-i18n="cv-label">Mi Trayectoria</div>
+      <h2 class="section-title"><span data-i18n="cv-title-prefix">Mi</span> <span data-i18n="cv-title-span">CV</span></h2>
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <h3>Experiencia Profesional</h3>
-        <p>Desarrollador creativo con más de 3 años de experiencia en la creación de soluciones digitales multiplataforma. He trabajado en proyectos que van desde aplicaciones web hasta videojuegos.</p>
+        <h3 data-i18n="cv-subtitle">Experiencia Profesional</h3>
+        <p data-i18n="cv-text">Desarrollador creativo con más de 3 años de experiencia en la creación de soluciones digitales multiplataforma. He trabajado en proyectos que van desde aplicaciones web hasta videojuegos.</p>
         
         <div class="skills-row">
-          <span class="skill-tag">3+ Años</span>
-          <span class="skill-tag">Proyectos Completados</span>
-          <span class="skill-tag">Freelance</span>
+          <span class="skill-tag" data-i18n="cv-tag-years">3+ Años</span>
+          <span class="skill-tag" data-i18n="cv-tag-projects">Proyectos Completados</span>
+          <span class="skill-tag" data-i18n="cv-tag-freelance">Freelance</span>
         </div>
         
-        <a href="cv.html" target="_blank" class="btn-primary">Ver / Descargar CV</a>
+        <a href="cv.html" target="_blank" class="btn-primary" data-i18n="cv-download-btn">Ver / Descargar CV</a>
       </div>
       <div class="about-img-wrap reveal">
         <div class="about-ring">
@@ -1160,33 +1183,33 @@
   <!-- SERVICES -->
   <section id="services">
     <div class="section-header reveal">
-      <div class="section-label">Lo que ofrezco</div>
-      <h2 class="section-title">Our <span>Services</span></h2>
+      <div class="section-label" data-i18n="services-label">Lo que ofrezco</div>
+      <h2 class="section-title"><span data-i18n="services-title-prefix">Nuestros</span> <span data-i18n="services-title-span">Servicios</span></h2>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
-        <h3>UX-UI Designer</h3>
-        <p>Diseño interfaces intuitivas y atractivas, centrando la experiencia del usuario y combinando estética con funcionalidad para crear productos digitales memorables.</p>
-        <a href="cv.html" target="_blank" class="btn-sm" style="text-decoration: none; display: inline-block;">Read More</a>
+        <h3 data-i18n="service-title-ux">UX-UI Designer</h3>
+        <p data-i18n="service-desc-ux">Diseño interfaces intuitivas y atractivas, centrando la experiencia del usuario y combinando estética con funcionalidad para crear productos digitales memorables.</p>
+        <a href="cv.html" target="_blank" class="btn-sm" style="text-decoration: none; display: inline-block;" data-i18n="service-readmore">Ver más</a>
       </div>
       <div class="service-card reveal" style="transition-delay:0.1s">
         <div class="service-icon-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
-        <h3>Web Development</h3>
-        <p>Desarrollo sitios y aplicaciones web modernas, responsivas y de alto rendimiento, utilizando tecnologías actuales y buenas prácticas de programación.</p>
-        <a href="cv.html" target="_blank" class="btn-sm" style="text-decoration: none; display: inline-block;">Read More</a>
+        <h3 data-i18n="service-title-web">Web Development</h3>
+        <p data-i18n="service-desc-web">Desarrollo sitios y aplicaciones web modernas, responsivas y de alto rendimiento, utilizando tecnologías actuales y buenas prácticas de programación.</p>
+        <a href="cv.html" target="_blank" class="btn-sm" style="text-decoration: none; display: inline-block;" data-i18n="service-readmore">Ver más</a>
       </div>
       <div class="service-card reveal" style="transition-delay:0.2s">
         <div class="service-icon-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
         </div>
-        <h3>Digital Marketing</h3>
-        <p>Estrategias digitales para posicionar tu marca en el entorno online, aumentar visibilidad y conectar con tu audiencia de manera efectiva.</p>
-        <a href="cv.html" target="_blank" class="btn-sm" style="text-decoration: none; display: inline-block;">Read More</a>
+        <h3 data-i18n="service-title-marketing">Digital Marketing</h3>
+        <p data-i18n="service-desc-marketing">Estrategias digitales para posicionar tu marca en el entorno online, aumentar visibilidad y conectar con tu audiencia de manera efectiva.</p>
+        <a href="cv.html" target="_blank" class="btn-sm" style="text-decoration: none; display: inline-block;" data-i18n="service-readmore">Ver más</a>
       </div>
     </div>
   </section>
@@ -1194,38 +1217,38 @@
   <!-- PORTFOLIO -->
   <section id="portafolio">
     <div class="section-header reveal">
-      <div class="section-label">Mis trabajos</div>
-      <h2 class="section-title">Our <span>Projects</span></h2>
+      <div class="section-label" data-i18n="portfolio-label">Mis trabajos</div>
+      <h2 class="section-title"><span data-i18n="portfolio-title-prefix">Nuestros</span> <span data-i18n="portfolio-title-span">Proyectos</span></h2>
     </div>
     <div class="projects-grid">
       <a href="https://gamavg06.github.io/HotelBookingSystem2.0/" class="project-card reveal" data-project="hotel">
         <div class="project-thumb" style="background:#0d2137;">
           <img src="Hotel.png" alt="Hotel Booking System" class="project-img" />
-          <div class="project-thumb-overlay"><span>Ver Detalles</span></div>
+          <div class="project-thumb-overlay"><span data-i18n="project-view-details">Ver Detalles</span></div>
         </div>
         <div class="project-info">
           <h4>Hotel Booking System</h4>
-          <p>Gestión de reservaciones con C# y SQLite</p>
+          <p data-i18n="project-desc-hotel">Gestión de reservaciones con C# y SQLite</p>
         </div>
       </a>
       <a href="https://gamavg06.github.io/LearnMore/" class="project-card reveal" style="transition-delay:0.1s" data-project="learnmore">
         <div class="project-thumb" style="background:#131020;">
           <img src="LearnMore.png" alt="LearnMore" class="project-img" />
-          <div class="project-thumb-overlay"><span>Ver Detalles</span></div>
+          <div class="project-thumb-overlay"><span data-i18n="project-view-details">Ver Detalles</span></div>
         </div>
         <div class="project-info">
           <h4>LearnMore — Plataforma</h4>
-          <p>Organización y acceso a recursos de estudio</p>
+          <p data-i18n="project-desc-learnmore">Organización y acceso a recursos de estudio</p>
         </div>
       </a>
       <a href="https://gamavg06.github.io/BioPlantBrayansCompany/" class="project-card reveal" style="transition-delay:0.2s" data-project="bioplant">
         <div class="project-thumb" style="background:#0a2212;">
           <img src="BioPlant.png" alt="Bioplant" class="project-img" />
-          <div class="project-thumb-overlay"><span>Ver Detalles</span></div>
+          <div class="project-thumb-overlay"><span data-i18n="project-view-details">Ver Detalles</span></div>
         </div>
         <div class="project-info">
           <h4>Bioplant — Videojuego</h4>
-          <p>Proyecto interactivo educativo original</p>
+          <p data-i18n="project-desc-bioplant">Proyecto interactivo educativo original</p>
         </div>
       </a>
     </div>
@@ -1235,14 +1258,14 @@
   <section id="contact">
     <div class="contact-wrap">
       <div class="section-header reveal">
-        <div class="section-label">Hablemos</div>
-        <h2 class="section-title">Contact <span>Me!</span></h2>
+        <div class="section-label" data-i18n="contact-label">Hablemos</div>
+        <h2 class="section-title"><span data-i18n="contact-title-prefix">¡Contáctame</span> <span data-i18n="contact-title-span">!</span></h2>
       </div>
       <div class="contact-grid-wrap">
         <!-- COLUMNA IZQUIERDA: INFORMACION -->
         <div class="contact-info reveal">
           <div class="contact-name">Gamaliel Velazquez Puebla</div>
-          <div class="contact-subtitle">Desarrollador Creativo y Multiplataforma</div>
+          <div class="contact-subtitle" data-i18n="contact-subtitle">Desarrollador Creativo y Multiplataforma</div>
           <div class="contact-row">
             <div class="contact-row-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1253,16 +1276,16 @@
             <div class="contact-row-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
             </div>
-            <div class="contact-row-text">Teléfono<strong>2761095688</strong></div>
+            <div class="contact-row-text"><span data-i18n="contact-phone-label">Teléfono</span><strong>2761095688</strong></div>
           </div>
           <div class="contact-row">
             <div class="contact-row-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <div class="contact-row-text">Ubicación<strong>México</strong></div>
+            <div class="contact-row-text"><span data-i18n="contact-location-label">Ubicación</span><strong>México</strong></div>
           </div>
           <div class="contact-btns">
-            <a href="mailto:gmlvega0025@gmail.com" class="btn-primary">Enviar Correo</a>
+            <a href="mailto:gmlvega0025@gmail.com" class="btn-primary" data-i18n="contact-email-btn">Enviar Correo</a>
             <a href="https://wa.me/522761095688" target="_blank" class="btn-outline">WhatsApp</a>
           </div>
         </div>
@@ -1270,22 +1293,22 @@
         <!-- COLUMNA DERECHA: FORMULARIO -->
         <form action="https://formspree.io/f/placeholder_id" method="POST" class="contact-form reveal" style="transition-delay:0.1s">
           <div class="form-group">
-            <label for="formName">Nombre Completo</label>
-            <input type="text" id="formName" name="name" required placeholder="Ingresa tu nombre" />
+            <label for="formName" data-i18n="form-name-label">Nombre Completo</label>
+            <input type="text" id="formName" name="name" required placeholder="Ingresa tu nombre" data-i18n-placeholder="form-name-placeholder" />
           </div>
           <div class="form-group">
-            <label for="formEmail">Correo Electrónico</label>
-            <input type="email" id="formEmail" name="email" required placeholder="tu.correo@ejemplo.com" />
+            <label for="formEmail" data-i18n="form-email-label">Correo Electrónico</label>
+            <input type="email" id="formEmail" name="email" required placeholder="tu.correo@ejemplo.com" data-i18n-placeholder="form-email-placeholder" />
           </div>
           <div class="form-group">
-            <label for="formSubject">Asunto</label>
-            <input type="text" id="formSubject" name="subject" required placeholder="¿En qué puedo ayudarte?" />
+            <label for="formSubject" data-i18n="form-subject-label">Asunto</label>
+            <input type="text" id="formSubject" name="subject" required placeholder="¿En qué puedo ayudarte?" data-i18n-placeholder="form-subject-placeholder" />
           </div>
           <div class="form-group">
-            <label for="formMessage">Mensaje</label>
-            <textarea id="formMessage" name="message" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+            <label for="formMessage" data-i18n="form-message-label">Mensaje</label>
+            <textarea id="formMessage" name="message" rows="4" required placeholder="Escribe tu mensaje aquí..." data-i18n-placeholder="form-message-placeholder"></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; cursor: pointer;">Enviar Mensaje</button>
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; cursor: pointer;" data-i18n="form-submit-btn">Enviar Mensaje</button>
         </form>
       </div>
     </div>
@@ -1305,27 +1328,27 @@
           <p id="modalSubtitle" class="modal-subtitle">Project Subtitle</p>
           
           <div class="modal-section">
-            <h4>Sobre el Proyecto</h4>
+            <h4 data-i18n="modal-about">Sobre el Proyecto</h4>
             <p id="modalDesc" class="modal-desc">Project description goes here...</p>
           </div>
           
           <div class="modal-section">
-            <h4>Características Clave</h4>
+            <h4 data-i18n="modal-features">Características Clave</h4>
             <ul id="modalFeatures" class="modal-features">
               <!-- Dynamically populated -->
             </ul>
           </div>
           
           <div class="modal-section">
-            <h4>Tecnologías Utilizadas</h4>
+            <h4 data-i18n="modal-tech">Tecnologías Utilizadas</h4>
             <div id="modalTech" class="skills-cat-list">
               <!-- Dynamically populated badges -->
             </div>
           </div>
           
           <div class="modal-actions">
-            <a id="modalDemoLink" href="#" target="_blank" class="btn-primary">Ver Demo en Vivo</a>
-            <a id="modalCodeLink" href="#" target="_blank" class="btn-outline">Ver Código en GitHub</a>
+            <a id="modalDemoLink" href="#" target="_blank" class="btn-primary" data-i18n="modal-demo-btn">Ver Demo en Vivo</a>
+            <a id="modalCodeLink" href="#" target="_blank" class="btn-outline" data-i18n="modal-code-btn">Ver Código en GitHub</a>
           </div>
         </div>
       </div>
@@ -1334,8 +1357,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 <span>Gamaliel</span> Velazquez — Todos los derechos reservados.</p>
-    <p>Hecho con <span>♥</span> en México</p>
+    <p data-i18n="footer-copyright">© 2025 <span>Gamaliel</span> Velazquez — Todos los derechos reservados.</p>
+    <p data-i18n="footer-madeby">Hecho con <span>♥</span> en México</p>
   </footer>
 
   <script>
@@ -1378,12 +1401,18 @@
     });
 
     /* ── TYPED TEXT ── */
-    const roles = ['Creative Developer', 'UX-UI Designer', 'Web Developer', 'Game Developer'];
+    const rolesData = {
+      es: ['Desarrollador Creativo', 'Diseñador UX-UI', 'Desarrollador Web', 'Desarrollador de Juegos'],
+      en: ['Creative Developer', 'UX-UI Designer', 'Web Developer', 'Game Developer']
+    };
     let roleIdx = 0, charIdx = 0, deleting = false;
     const typedEl = document.getElementById('typedText');
 
     function typeLoop() {
-      const current = roles[roleIdx];
+      const currentLang = localStorage.getItem('lang') || 'es';
+      const currentRoles = rolesData[currentLang] || rolesData['es'];
+      const current = currentRoles[roleIdx % currentRoles.length];
+      
       if (!deleting) {
         typedEl.textContent = current.slice(0, ++charIdx);
         if (charIdx === current.length) {
@@ -1395,7 +1424,7 @@
         typedEl.textContent = current.slice(0, --charIdx);
         if (charIdx === 0) {
           deleting = false;
-          roleIdx = (roleIdx + 1) % roles.length;
+          roleIdx = (roleIdx + 1) % currentRoles.length;
         }
       }
       setTimeout(typeLoop, deleting ? 60 : 90);
@@ -1416,63 +1445,125 @@
 
     /* ── PROJECTS DATABASE ── */
     const projectsData = {
-      hotel: {
-        title: "Hotel Booking System",
-        subtitle: "Gestión de reservaciones con C# y SQLite",
-        desc: "Un sistema integral de escritorio diseñado para facilitar la administración diaria de un hotel. Este proyecto resuelve la automatización del control de disponibilidad de habitaciones, check-ins, check-outs y registros de clientes, integrando almacenamiento persistente rápido.",
-        img: "Hotel.png",
-        features: [
-          "Base de datos SQLite local para una carga veloz y almacenamiento desconectado.",
-          "Verificación automática de disponibilidad y conflictos de fechas.",
-          "Generación rápida de facturas y reportes de ocupación.",
-          "Arquitectura modular construida con C# bajo patrones POO avanzados."
-        ],
-        tech: [
-          { icon: "devicon-csharp-plain", name: "C#" },
-          { icon: "devicon-dotnetline-plain", name: ".NET 9" },
-          { icon: "devicon-sqlite-plain", name: "SQLite" }
-        ],
-        demo: "https://gamavg06.github.io/HotelBookingSystem2.0/",
-        code: "https://github.com/gamavg06/HotelBookingSystem2.0"
+      es: {
+        hotel: {
+          title: "Hotel Booking System",
+          subtitle: "Gestión de reservaciones con C# y SQLite",
+          desc: "Un sistema integral de escritorio diseñado para facilitar la administración diaria de un hotel. Este proyecto resuelve la automatización del control de disponibilidad de habitaciones, check-ins, check-outs y registros de clientes, integrando almacenamiento persistente rápido.",
+          img: "Hotel.png",
+          features: [
+            "Base de datos SQLite local para una carga veloz y almacenamiento desconectado.",
+            "Verificación automática de disponibilidad y conflictos de fechas.",
+            "Generación rápida de facturas y reportes de ocupación.",
+            "Arquitectura modular construida con C# bajo patrones POO avanzados."
+          ],
+          tech: [
+            { icon: "devicon-csharp-plain", name: "C#" },
+            { icon: "devicon-dotnetline-plain", name: ".NET 9" },
+            { icon: "devicon-sqlite-plain", name: "SQLite" }
+          ],
+          demo: "https://gamavg06.github.io/HotelBookingSystem2.0/",
+          code: "https://github.com/gamavg06/HotelBookingSystem2.0"
+        },
+        learnmore: {
+          title: "LearnMore — Plataforma",
+          subtitle: "Organización y acceso a recursos de estudio",
+          desc: "Una plataforma web centralizada diseñada especialmente para la comunidad universitaria. Resuelve la dispersión de apuntes y materiales de estudio permitiendo organizar, clasificar y acceder a guías académicas con un par de clics.",
+          img: "LearnMore.png",
+          features: [
+            "Buscador predictivo por materias y temas específicos.",
+            "Persistencia de datos robusta y optimizada para acceso concurrente.",
+            "Diseño responsivo optimizado para lectura en móviles y tablets.",
+            "Subida y categorización estructurada de apuntes y recursos."
+          ],
+          tech: [
+            { icon: "devicon-javascript-plain", name: "JavaScript" },
+            { icon: "devicon-html5-plain", name: "HTML5" },
+            { icon: "devicon-css3-plain", name: "CSS3" },
+            { icon: "devicon-supabase-plain", name: "Supabase" }
+          ],
+          demo: "https://gamavg06.github.io/LearnMore/",
+          code: "https://github.com/gamavg06/LearnMore"
+        },
+        bioplant: {
+          title: "Bioplant — Videojuego Educativo",
+          subtitle: "Liderazgo y desarrollo de videojuego interactivo",
+          desc: "Un videojuego educativo original e interactivo orientado a concientizar sobre el cuidado ambiental y la botánica. Lideré un equipo multidisciplinario a cargo del diseño, programación de mecánicas y la integración técnica de los assets visuales.",
+          img: "BioPlant.png",
+          features: [
+            "Mecánicas de juego lúdicas e interactivas que estimulan el aprendizaje.",
+            "Integración completa de assets de sonido, sprites y mecánicas físicas.",
+            "Liderazgo técnico del proyecto (Team Lead) gestionando cronogramas y sprints.",
+            "Construido bajo altos estándares de código estructurado y optimizado."
+          ],
+          tech: [
+            { icon: "devicon-javascript-plain", name: "JavaScript" },
+            { icon: "devicon-html5-plain", name: "HTML5" },
+            { icon: "devicon-css3-plain", name: "CSS3" }
+          ],
+          demo: "https://gamavg06.github.io/BioPlantBrayansCompany/",
+          code: "https://github.com/gamavg06/BioPlantBrayansCompany"
+        }
       },
-      learnmore: {
-        title: "LearnMore — Plataforma",
-        subtitle: "Organización y acceso a recursos de estudio",
-        desc: "Una plataforma web centralizada diseñada especialmente para la comunidad universitaria. Resuelve la dispersión de apuntes y materiales de estudio permitiendo organizar, clasificar y acceder a guías académicas con un par de clics.",
-        img: "LearnMore.png",
-        features: [
-          "Buscador predictivo por materias y temas específicos.",
-          "Persistencia de datos robusta y optimizada para acceso concurrente.",
-          "Diseño responsivo optimizado para lectura en móviles y tablets.",
-          "Subida y categorización estructurada de apuntes y recursos."
-        ],
-        tech: [
-          { icon: "devicon-javascript-plain", name: "JavaScript" },
-          { icon: "devicon-html5-plain", name: "HTML5" },
-          { icon: "devicon-css3-plain", name: "CSS3" },
-          { icon: "devicon-supabase-plain", name: "Supabase" }
-        ],
-        demo: "https://gamavg06.github.io/LearnMore/",
-        code: "https://github.com/gamavg06/LearnMore"
-      },
-      bioplant: {
-        title: "Bioplant — Videojuego Educativo",
-        subtitle: "Liderazgo y desarrollo de videojuego interactivo",
-        desc: "Un videojuego educativo original e interactivo orientado a concientizar sobre el cuidado ambiental y la botánica. Lideré un equipo multidisciplinario a cargo del diseño, programación de mecánicas y la integración técnica de los assets visuales.",
-        img: "BioPlant.png",
-        features: [
-          "Mecánicas de juego lúdicas e interactivas que estimulan el aprendizaje.",
-          "Integración completa de assets de sonido, sprites y mecánicas físicas.",
-          "Liderazgo técnico del proyecto (Team Lead) gestionando cronogramas y sprints.",
-          "Construido bajo altos estándares de código estructurado y optimizado."
-        ],
-        tech: [
-          { icon: "devicon-javascript-plain", name: "JavaScript" },
-          { icon: "devicon-html5-plain", name: "HTML5" },
-          { icon: "devicon-css3-plain", name: "CSS3" }
-        ],
-        demo: "https://gamavg06.github.io/BioPlantBrayansCompany/",
-        code: "https://github.com/gamavg06/BioPlantBrayansCompany"
+      en: {
+        hotel: {
+          title: "Hotel Booking System",
+          subtitle: "Reservation management with C# and SQLite",
+          desc: "A comprehensive desktop application designed to facilitate the daily administration of a hotel. This project automates room availability, check-ins, check-outs, and customer records, integrating fast, local persistent database storage.",
+          img: "Hotel.png",
+          features: [
+            "Local SQLite database for fast loading and offline data access.",
+            "Automatic date availability checks and room conflicts prevention.",
+            "Fast invoice generation and occupancy reporting.",
+            "Modular architecture built in C# using advanced OOP patterns."
+          ],
+          tech: [
+            { icon: "devicon-csharp-plain", name: "C#" },
+            { icon: "devicon-dotnetline-plain", name: ".NET 9" },
+            { icon: "devicon-sqlite-plain", name: "SQLite" }
+          ],
+          demo: "https://gamavg06.github.io/HotelBookingSystem2.0/",
+          code: "https://github.com/gamavg06/HotelBookingSystem2.0"
+        },
+        learnmore: {
+          title: "LearnMore — Platform",
+          subtitle: "Organization and access to study resources",
+          desc: "A centralized web platform built for the university community. It organizes scattered lecture notes and academic study guides, allowing quick categorized retrieval in just a few clicks.",
+          img: "LearnMore.png",
+          features: [
+            "Predictive search bar sorted by courses and topics.",
+            "Robust data persistence optimized for concurrent access.",
+            "Responsive layout design optimized for mobile and tablet reading.",
+            "Structured uploads and categorization of study resources."
+          ],
+          tech: [
+            { icon: "devicon-javascript-plain", name: "JavaScript" },
+            { icon: "devicon-html5-plain", name: "HTML5" },
+            { icon: "devicon-css3-plain", name: "CSS3" },
+            { icon: "devicon-supabase-plain", name: "Supabase" }
+          ],
+          demo: "https://gamavg06.github.io/LearnMore/",
+          code: "https://github.com/gamavg06/LearnMore"
+        },
+        bioplant: {
+          title: "Bioplant — Educational Game",
+          subtitle: "Leadership and interactive game development",
+          desc: "An original educational game teaching environmental care and botany. I led a cross-functional team coordinating design, game physics mechanics, and visual asset integrations.",
+          img: "BioPlant.png",
+          features: [
+            "Playful learning game mechanics that boost student engagement.",
+            "Full integration of sound, sprite assets, and physics mechanics.",
+            "Technical project leadership (Team Lead) managing timeline and sprints.",
+            "Built with structured and clean optimized code standards."
+          ],
+          tech: [
+            { icon: "devicon-javascript-plain", name: "JavaScript" },
+            { icon: "devicon-html5-plain", name: "HTML5" },
+            { icon: "devicon-css3-plain", name: "CSS3" }
+          ],
+          demo: "https://gamavg06.github.io/BioPlantBrayansCompany/",
+          code: "https://github.com/gamavg06/BioPlantBrayansCompany"
+        }
       }
     };
 
@@ -1493,9 +1584,10 @@
     document.querySelectorAll('.project-card').forEach(card => {
       card.addEventListener('click', function(e) {
         const projectId = this.getAttribute('data-project');
-        if (projectId && projectsData[projectId]) {
+        const lang = localStorage.getItem('lang') || 'es';
+        if (projectId && projectsData[lang] && projectsData[lang][projectId]) {
           e.preventDefault();
-          const data = projectsData[projectId];
+          const data = projectsData[lang][projectId];
           
           // Populate modal fields
           modalImg.src = data.img;
@@ -1554,6 +1646,200 @@
         closeModal();
       }
     });
+
+    /* ── TRANSLATIONS DATABASE ── */
+    const translations = {
+      es: {
+        "nav-home": "Inicio",
+        "nav-about": "Sobre mí",
+        "nav-cv": "CV",
+        "nav-services": "Servicios",
+        "nav-portfolio": "Portafolio",
+        "nav-contact": "Contacto",
+        "hero-eyebrow": "Hola, soy yo",
+        "hero-role-prefix": "Y soy",
+        "hero-desc": "Desarrollador creativo apasionado por transformar ideas en experiencias digitales únicas. Combino programación, diseño visual y desarrollo de videojuegos para crear proyectos innovadores.",
+        "hero-contact-btn": "Contactar",
+        "hero-portfolio-btn": "Ver proyectos",
+        "hero-exp-badge": "años de exp.",
+        "about-label": "Conóceme",
+        "about-title-prefix": "Sobre",
+        "about-title-span": "mí",
+        "about-text-p1": "Soy un Programador Creativo y desarrollador multiplataforma especializado en fusionar lógica técnica con diseño innovador. Con experiencia en C# (incluyendo el desarrollo de un videojuego de Tic-Tac-Toe), diseño de wireframes con Balsamiq y gestión de bases de datos con MySQL.",
+        "about-text-p2": "Me enfoco en construir soluciones digitales que sean funcionales e intuitivamente diseñadas, demostrando adaptabilidad en diversas plataformas y entornos de desarrollo.",
+        "about-cat-backend": "Backend & DB",
+        "about-cat-frontend": "Frontend & Web",
+        "about-cat-tools": "Diseño & Herramientas",
+        "about-view-more": "Ver más",
+        "cv-label": "Mi Trayectoria",
+        "cv-title-prefix": "Mi",
+        "cv-title-span": "CV",
+        "cv-subtitle": "Experiencia Profesional",
+        "cv-text": "Desarrollador creativo con más de 3 años de experiencia en la creación de soluciones digitales multiplataforma. He trabajado en proyectos que van desde aplicaciones web hasta videojuegos.",
+        "cv-tag-years": "3+ Años",
+        "cv-tag-projects": "Proyectos Completados",
+        "cv-tag-freelance": "Freelance",
+        "cv-download-btn": "Ver / Descargar CV",
+        "services-label": "Lo que ofrezco",
+        "services-title-prefix": "Nuestros",
+        "services-title-span": "Servicios",
+        "service-title-ux": "UX-UI Designer",
+        "service-desc-ux": "Diseño interfaces intuitivas y atractivas, centrando la experiencia del usuario y combinando estética con funcionalidad para crear productos digitales memorables.",
+        "service-readmore": "Ver más",
+        "service-title-web": "Web Development",
+        "service-desc-web": "Desarrollo sitios y aplicaciones web modernas, responsivas y de alto rendimiento, utilizando tecnologías actuales y buenas prácticas de programación.",
+        "service-title-marketing": "Digital Marketing",
+        "service-desc-marketing": "Estrategias digitales para posicionar tu marca en el entorno online, aumentar visibilidad y conectar con tu audiencia de manera efectiva.",
+        "portfolio-label": "Mis trabajos",
+        "portfolio-title-prefix": "Nuestros",
+        "portfolio-title-span": "Proyectos",
+        "project-view-details": "Ver Detalles",
+        "project-desc-hotel": "Gestión de reservaciones con C# y SQLite",
+        "project-desc-learnmore": "Organización y acceso a recursos de estudio",
+        "project-desc-bioplant": "Proyecto interactivo educativo original",
+        "contact-label": "Hablemos",
+        "contact-title-prefix": "¡Contáctame",
+        "contact-title-span": "!",
+        "contact-subtitle": "Desarrollador Creativo y Multiplataforma",
+        "contact-phone-label": "Teléfono",
+        "contact-location-label": "Ubicación",
+        "contact-email-btn": "Enviar Correo",
+        "form-name-label": "Nombre Completo",
+        "form-name-placeholder": "Ingresa tu nombre",
+        "form-email-label": "Correo Electrónico",
+        "form-email-placeholder": "tu.correo@ejemplo.com",
+        "form-subject-label": "Asunto",
+        "form-subject-placeholder": "¿En qué puedo ayudarte?",
+        "form-message-label": "Mensaje",
+        "form-message-placeholder": "Escribe tu mensaje aquí...",
+        "form-submit-btn": "Enviar Mensaje",
+        "modal-about": "Sobre el Proyecto",
+        "modal-features": "Características Clave",
+        "modal-tech": "Tecnologías Utilizadas",
+        "modal-demo-btn": "Ver Demo en Vivo",
+        "modal-code-btn": "Ver Código en GitHub",
+        "footer-copyright": "© 2025 Gamaliel Velazquez — Todos los derechos reservados.",
+        "footer-madeby": "Hecho con ♥ en México"
+      },
+      en: {
+        "nav-home": "Home",
+        "nav-about": "About",
+        "nav-cv": "CV",
+        "nav-services": "Services",
+        "nav-portfolio": "Portfolio",
+        "nav-contact": "Contact",
+        "hero-eyebrow": "Hello, it's me",
+        "hero-role-prefix": "And I'm a",
+        "hero-desc": "A creative developer passionate about transforming ideas into unique digital experiences. I combine programming, visual design, and game development to create innovative projects.",
+        "hero-contact-btn": "Contact Me",
+        "hero-portfolio-btn": "View Projects",
+        "hero-exp-badge": "years of exp.",
+        "about-label": "Get to know me",
+        "about-title-prefix": "About",
+        "about-title-span": "me",
+        "about-text-p1": "I am a Creative Programmer and multiplatform developer specialized in fusing technical logic with innovative design. Experienced in C# (including Tic-Tac-Toe game development), wireframe design with Balsamiq, and MySQL database management.",
+        "about-text-p2": "I focus on building digital solutions that are functional and intuitively designed, demonstrating adaptability across various platforms and development environments.",
+        "about-cat-backend": "Backend & Database",
+        "about-cat-frontend": "Frontend & Web",
+        "about-cat-tools": "Design & Tools",
+        "about-view-more": "Read More",
+        "cv-label": "My Journey",
+        "cv-title-prefix": "My",
+        "cv-title-span": "CV",
+        "cv-subtitle": "Professional Experience",
+        "cv-text": "Creative developer with over 3 years of experience in crafting multiplatform digital solutions. I have worked on projects ranging from web applications to games.",
+        "cv-tag-years": "3+ Years",
+        "cv-tag-projects": "Completed Projects",
+        "cv-tag-freelance": "Freelancing",
+        "cv-download-btn": "View / Download CV",
+        "services-label": "What I offer",
+        "services-title-prefix": "Our",
+        "services-title-span": "Services",
+        "service-title-ux": "UX-UI Designer",
+        "service-desc-ux": "I design intuitive and appealing interfaces, placing user experience at the center while combining aesthetics and functionality to create memorable digital products.",
+        "service-readmore": "Read More",
+        "service-title-web": "Web Development",
+        "service-desc-web": "I develop modern, responsive, and high-performance websites and web applications, using current technologies and programming best practices.",
+        "service-title-marketing": "Digital Marketing",
+        "service-desc-marketing": "Digital strategies to position your brand online, boost visibility, and connect effectively with your target audience.",
+        "portfolio-label": "My Work",
+        "portfolio-title-prefix": "Our",
+        "portfolio-title-span": "Projects",
+        "project-view-details": "View Details",
+        "project-desc-hotel": "Reservation management with C# and SQLite",
+        "project-desc-learnmore": "Organization and access to study resources",
+        "project-desc-bioplant": "Interactive original educational videogame",
+        "contact-label": "Let's Talk",
+        "contact-title-prefix": "Contact",
+        "contact-title-span": "Me!",
+        "contact-subtitle": "Creative & Multiplatform Developer",
+        "contact-phone-label": "Phone",
+        "contact-location-label": "Location",
+        "contact-email-btn": "Send Email",
+        "form-name-label": "Full Name",
+        "form-name-placeholder": "Enter your name",
+        "form-email-label": "Email Address",
+        "form-email-placeholder": "your.email@example.com",
+        "form-subject-label": "Subject",
+        "form-subject-placeholder": "How can I help you?",
+        "form-message-label": "Message",
+        "form-message-placeholder": "Write your message here...",
+        "form-submit-btn": "Send Message",
+        "modal-about": "About the Project",
+        "modal-features": "Key Features",
+        "modal-tech": "Technologies Used",
+        "modal-demo-btn": "View Live Demo",
+        "modal-code-btn": "View Code on GitHub",
+        "footer-copyright": "© 2025 Gamaliel Velazquez — All rights reserved.",
+        "footer-madeby": "Made with ♥ in Mexico"
+      }
+    };
+
+    /* ── LANGUAGE SWITCHER SYSTEM ── */
+    const langToggleBtn = document.getElementById('langToggle');
+    let currentLang = localStorage.getItem('lang') || 'es';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+
+      // Update button text to display alternative language option
+      langToggleBtn.textContent = lang === 'es' ? 'EN' : 'ES';
+
+      // Update static elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          if (key === 'footer-copyright') {
+            el.innerHTML = lang === 'es' 
+              ? '© 2025 <span>Gamaliel</span> Velazquez — Todos los derechos reservados.'
+              : '© 2025 <span>Gamaliel</span> Velazquez — All rights reserved.';
+          } else if (key === 'footer-madeby') {
+            el.innerHTML = lang === 'es'
+              ? 'Hecho con <span>♥</span> en México'
+              : 'Made with <span>♥</span> in Mexico';
+          } else {
+            el.textContent = translations[lang][key];
+          }
+        }
+      });
+
+      // Update placeholder attributes
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('placeholder', translations[lang][key]);
+        }
+      });
+    }
+
+    langToggleBtn.addEventListener('click', () => {
+      const nextLang = currentLang === 'es' ? 'en' : 'es';
+      setLanguage(nextLang);
+    });
+
+    // Initialize Language
+    setLanguage(currentLang);
   </script>
 </body>
 </html>

@@ -43,12 +43,17 @@
         .cv-container {
             max-width: 920px;
             margin: 0 auto;
+        }
+
+        .cv-page {
             background: #ffffff;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             border-radius: 12px;
             overflow: hidden;
             display: grid;
             grid-template-columns: 310px 1fr;
+            margin-bottom: 40px;
+            position: relative;
         }
 
         /* Sidebar Column */
@@ -319,10 +324,26 @@
                 border-radius: 0 !important;
                 max-width: 100% !important;
                 margin: 0 !important;
+                width: 100% !important;
+            }
+
+            .cv-page {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                margin-bottom: 0 !important;
                 display: grid !important;
                 grid-template-columns: 280px 1fr !important;
                 width: 100% !important;
-                overflow: visible !important;
+                min-height: 255mm !important;
+                overflow: hidden !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+
+            .cv-page:last-of-type {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
             }
 
             .sidebar {
@@ -468,223 +489,235 @@
 
 <div class="cv-container">
     
-    <!-- COLUMNA IZQUIERDA -->
-    <aside class="sidebar">
-        <div class="sidebar-section">
-            <div class="sidebar-title">Contacto</div>
-            <div class="contact-item">
-                <strong>Ubicación</strong>
-                Nopalucan de la Granja, Puebla, México
-            </div>
-            <div class="contact-item">
-                <strong>Teléfono</strong>
-                223 131 6588
-            </div>
-            <div class="contact-item">
-                <strong>Correo Electrónico</strong>
-                <a href="mailto:gmlvega0025@gmail.com">gmlvega0025@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <strong>Portafolio Web</strong>
-                <a href="https://gamavg06.github.io/Portafolio-Personal/" target="_blank">gamavg06.github.io/Portafolio-Personal/</a>
-            </div>
-        </div>
-
-        <div class="sidebar-section">
-            <div class="sidebar-title">Idiomas</div>
-            <ul class="sidebar-list">
-                <li>Español (Nativo)</li>
-                <li>Inglés (B1 - Intermedio)</li>
-            </ul>
-        </div>
-
-        <div class="sidebar-section">
-            <div class="sidebar-title">Competencias Técnicas</div>
-            
-            <div class="skills-group">
-                <div class="skills-subtitle">Lenguajes & Frameworks</div>
-                <div class="tags-container">
-                    <span class="skill-tag">C#</span>
-                    <span class="skill-tag">.NET 9</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">POO</span>
+    <!-- PÁGINA 1 -->
+    <div class="cv-page">
+        <!-- COLUMNA IZQUIERDA -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Contacto</div>
+                <div class="contact-item">
+                    <strong>Ubicación</strong>
+                    Nopalucan de la Granja, Puebla, México
+                </div>
+                <div class="contact-item">
+                    <strong>Teléfono</strong>
+                    223 131 6588
+                </div>
+                <div class="contact-item">
+                    <strong>Correo Electrónico</strong>
+                    <a href="mailto:gmlvega0025@gmail.com">gmlvega0025@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Portafolio Web</strong>
+                    <a href="https://gamavg06.github.io/Portafolio-Personal/" target="_blank">gamavg06.github.io/Portafolio-Personal/</a>
                 </div>
             </div>
 
-            <div class="skills-group" style="margin-top: 10px;">
-                <div class="skills-subtitle">Bases de Datos</div>
-                <div class="tags-container">
-                    <span class="skill-tag">SQLite</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">Supabase</span>
-                    <span class="skill-tag">Firebase</span>
-                </div>
-            </div>
-
-            <div class="skills-group" style="margin-top: 10px;">
-                <div class="skills-subtitle">Redes & Diseño</div>
-                <div class="tags-container">
-                    <span class="skill-tag">Cisco Networking Basics</span>
-                    <span class="skill-tag">Figma</span>
-                    <span class="skill-tag">Photoshop</span>
-                    <span class="skill-tag">UI/UX</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="sidebar-section">
-            <div class="sidebar-title">Certificaciones</div>
-            
-            <div class="skills-group">
-                <div class="skills-subtitle">Tecnología</div>
-                <ul class="sidebar-list" style="font-size: 0.8rem;">
-                    <li>Desarrollo con IA (BIG School / Mouredev, 2026)</li>
-                    <li>Ingeniería en IA (IF Iberoamerican Tech, 2026)</li>
-                    <li>Diseñador UX (Aprende.org, 2025)</li>
-                    <li>Networking Basics (Cisco, 2025)</li>
-                    <li>Huella Digital (2025)</li>
-                    <li>Trabajo en Equipo (2026)</li>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Idiomas</div>
+                <ul class="sidebar-list">
+                    <li>Español (Nativo)</li>
+                    <li>Inglés (B1 - Intermedio)</li>
                 </ul>
             </div>
 
-            <div class="skills-group" style="margin-top: 10px;">
-                <div class="skills-subtitle">Medio Ambiente y Otras</div>
-                <ul class="sidebar-list" style="font-size: 0.8rem;">
-                    <li>Gobernanza del Aire (2026)</li>
-                    <li>Cálculo de Huella Hídrica (2025)</li>
-                    <li>Cálculo de Huella Ecológica (2025)</li>
-                    <li>Cálculo de Huella de Carbono (2025)</li>
-                    <li>Controlador de Plagas Urbanas (2025)</li>
-                </ul>
-            </div>
-        </div>
-    </aside>
-
-    <!-- COLUMNA DERECHA -->
-    <main class="main-content">
-        
-        <header class="header-section">
-            <h1>Gamaliel Velázquez Galicia</h1>
-            <h2>Jr. Developer & UI Designer</h2>
-            <div style="font-size: 0.85rem; color: var(--secondary-color); font-weight: 600; margin-top: 5px; text-transform: uppercase;">
-                Cursando 5.° Cuatrimestre de Ingeniería en TI
-            </div>
-        </header>
-
-        <section class="main-section">
-            <div class="main-title">Perfil Profesional</div>
-            <p class="profile-desc">
-                Estudiante de 5.º cuatrimestre de Ingeniería en Tecnologías de la Información e Innovación Digital en la UTBIS. Enfocado en el desarrollo de software (C#, .NET, Web), administración de bases de datos e infraestructura de redes. Experiencia práctica en liderazgo de equipos de desarrollo y diseño UI/UX. Profesional proactivo, adaptable y orientado al cumplimiento de objetivos con sólida ética laboral, buscando colaborar en el área de Sistemas de Global Denim mediante mis prácticas profesionales.
-            </p>
-        </section>
-
-        <section class="main-section">
-            <div class="main-title">Educación</div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div class="timeline-title">Ingeniería en Tecnologías de la Información e Innovación Digital</div>
-                    <span class="timeline-date">Actualmente Cursando</span>
-                </div>
-                <div class="timeline-role">Universidad Tecnológica Bilingüe Internacional y Sustentable de Puebla (UTBIS)</div>
-                <ul class="item-description">
-                    <li>Cursando el 5.° Cuatrimestre con enfoque en tecnologías de vanguardia y bilingüismo.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="main-section">
-            <div class="main-title">Proyectos Destacados</div>
-            <div class="timeline-container">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Competencias Técnicas</div>
                 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">Bioplant — Videojuego Educativo</div>
-                        <span class="timeline-date">Rol: Team Lead</span>
+                <div class="skills-group">
+                    <div class="skills-subtitle">Lenguajes & Frameworks</div>
+                    <div class="tags-container">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">.NET 9</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">POO</span>
                     </div>
-                    <ul class="item-description">
-                        <li>Dirección y coordinación de equipo multidisciplinario para el desarrollo del proyecto.</li>
-                        <li>Gestión de cronogramas, asignación de tareas e integración de arquitecturas técnicas y assets visuales.</li>
-                    </ul>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">Learn More — Plataforma de Recursos de Estudio</div>
-                        <span class="timeline-date">Rol: Desarrollador Full-Stack</span>
+                <div class="skills-group" style="margin-top: 10px;">
+                    <div class="skills-subtitle">Bases de Datos</div>
+                    <div class="tags-container">
+                        <span class="skill-tag">SQLite</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">Firebase</span>
                     </div>
-                    <ul class="item-description">
-                        <li>Desarrollo con JavaScript, HTML, CSS y persistencia de datos en Supabase / Firebase.</li>
-                        <li>Diseño de arquitectura web centralizada para optimizar el acceso a recursos académicos universitarios.</li>
-                    </ul>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">Sistema de Reserva de Hoteles</div>
-                        <span class="timeline-date">Rol: Desarrollador de Software</span>
+                <div class="skills-group" style="margin-top: 10px;">
+                    <div class="skills-subtitle">Redes & Diseño</div>
+                    <div class="tags-container">
+                        <span class="skill-tag">Cisco Networking Basics</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">UI/UX</span>
                     </div>
-                    <ul class="item-description">
-                        <li>Aplicación de escritorio desarrollada en C# y .NET 9 para gestión integral de reservaciones.</li>
-                        <li>Implementación e integración de base de datos relacional SQLite para el control de registros.</li>
-                    </ul>
                 </div>
+            </div>
+        </aside>
 
+        <!-- COLUMNA DERECHA -->
+        <main class="main-content">
+            <header class="header-section">
+                <h1>Gamaliel Velázquez Galicia</h1>
+                <h2>Jr. Developer & UI Designer</h2>
+                <div style="font-size: 0.85rem; color: var(--secondary-color); font-weight: 600; margin-top: 5px; text-transform: uppercase;">
+                    Cursando 5.° Cuatrimestre de Ingeniería en TI
+                </div>
+            </header>
+
+            <section class="main-section">
+                <div class="main-title">Perfil Profesional</div>
+                <p class="profile-desc">
+                    Estudiante de 5.º cuatrimestre de Ingeniería en Tecnologías de la Información e Innovación Digital en la UTBIS. Enfocado en el desarrollo de software (C#, .NET, Web), administración de bases de datos e infraestructura de redes. Experiencia práctica en liderazgo de equipos de desarrollo y diseño UI/UX. Profesional proactivo, adaptable y orientado al cumplimiento de objetivos con sólida ética laboral, buscando colaborar en el área de Sistemas de Global Denim mediante mis prácticas profesionales.
+                </p>
+            </section>
+
+            <section class="main-section">
+                <div class="main-title">Educación</div>
                 <div class="timeline-item">
                     <div class="timeline-header">
-                        <div class="timeline-title">Tic-Tac-Toe — Juego de Mesa Interactivo</div>
-                        <span class="timeline-date">Rol: Desarrollador C#</span>
+                        <div class="timeline-title">Ingeniería en Tecnologías de la Información e Innovación Digital</div>
+                        <span class="timeline-date">Actualmente Cursando</span>
                     </div>
+                    <div class="timeline-role">Universidad Tecnológica Bilingüe Internacional y Sustentable de Puebla (UTBIS)</div>
                     <ul class="item-description">
-                        <li>Desarrollo en C# aplicando Programación Orientada a Objetos (POO) y validación lógica de estados del juego.</li>
+                        <li>Cursando el 5.° Cuatrimestre con enfoque en tecnologías de vanguardia y bilingüismo.</li>
                     </ul>
                 </div>
+            </section>
+
+            <section class="main-section">
+                <div class="main-title">Proyectos Destacados</div>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Bioplant — Videojuego Educativo</div>
+                            <span class="timeline-date">Rol: Team Lead</span>
+                        </div>
+                        <ul class="item-description">
+                            <li>Dirección y coordinación de equipo multidisciplinario para el desarrollo del proyecto.</li>
+                            <li>Gestión de cronogramas, asignación de tareas e integración de arquitecturas técnicas y assets visuales.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Learn More — Plataforma de Recursos de Estudio</div>
+                            <span class="timeline-date">Rol: Desarrollador Full-Stack</span>
+                        </div>
+                        <ul class="item-description">
+                            <li>Desarrollo con JavaScript, HTML, CSS y persistencia de datos en Supabase / Firebase.</li>
+                            <li>Diseño de arquitectura web centralizada para optimizar el acceso a recursos académicos universitarios.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- PÁGINA 2 -->
+    <div class="cv-page">
+        <!-- COLUMNA IZQUIERDA -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Certificaciones</div>
                 
+                <div class="skills-group">
+                    <div class="skills-subtitle">Tecnología</div>
+                    <ul class="sidebar-list" style="font-size: 0.8rem;">
+                        <li>Desarrollo con IA (BIG School / Mouredev, 2026)</li>
+                        <li>Ingeniería en IA (IF Iberoamerican Tech, 2026)</li>
+                        <li>Diseñador UX (Aprende.org, 2025)</li>
+                        <li>Networking Basics (Cisco, 2025)</li>
+                        <li>Huella Digital (2025)</li>
+                        <li>Trabajo en Equipo (2026)</li>
+                    </ul>
+                </div>
+
+                <div class="skills-group" style="margin-top: 10px;">
+                    <div class="skills-subtitle">Medio Ambiente y Otras</div>
+                    <ul class="sidebar-list" style="font-size: 0.8rem;">
+                        <li>Gobernanza del Aire (2026)</li>
+                        <li>Cálculo de Huella Hídrica (2025)</li>
+                        <li>Cálculo de Huella Ecológica (2025)</li>
+                        <li>Cálculo de Huella de Carbono (2025)</li>
+                        <li>Controlador de Plagas Urbanas (2025)</li>
+                    </ul>
+                </div>
             </div>
-        </section>
+        </aside>
 
-        <section class="main-section">
-            <div class="main-title">Experiencia Laboral</div>
-            <div class="timeline-container">
-
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">Carnicería La Juquila</div>
-                        <span class="timeline-date">Junio 2026 – Actualidad</span>
+        <!-- COLUMNA DERECHA -->
+        <main class="main-content">
+            <section class="main-section">
+                <div class="main-title">Proyectos Destacados (Cont.)</div>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Sistema de Reserva de Hoteles</div>
+                            <span class="timeline-date">Rol: Desarrollador de Software</span>
+                        </div>
+                        <ul class="item-description">
+                            <li>Aplicación de escritorio desarrollada en C# y .NET 9 para gestión integral de reservaciones.</li>
+                            <li>Implementación e integración de base de datos relacional SQLite para el control de registros.</li>
+                        </ul>
                     </div>
-                    <div class="timeline-role">Ayudante General</div>
-                    <ul class="item-description">
-                        <li>Atención al cliente, gestión eficiente de pedidos y control de inventario riguroso.</li>
-                    </ul>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">Grupo Constructor Gori y Asociados</div>
-                        <span class="timeline-date">Abril 2026 – Mayo 2026</span>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Tic-Tac-Toe — Juego de Mesa Interactivo</div>
+                            <span class="timeline-date">Rol: Desarrollador C#</span>
+                        </div>
+                        <ul class="item-description">
+                            <li>Desarrollo en C# aplicando Programación Orientada a Objetos (POO) y validación lógica de estados del juego.</li>
+                        </ul>
                     </div>
-                    <div class="timeline-role">Ayudante General (Ciudad Modelo)</div>
-                    <ul class="item-description">
-                        <li>Soporte operativo bajo altos estándares de trabajo en equipo y cumplimiento estricto de plazos.</li>
-                    </ul>
                 </div>
+            </section>
 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">Grupo Constructor Peralta</div>
-                        <span class="timeline-date">Julio 2025 – Agosto 2025</span>
+            <section class="main-section">
+                <div class="main-title">Experiencia Laboral</div>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Carnicería La Juquila</div>
+                            <span class="timeline-date">Junio 2026 – Actualidad</span>
+                        </div>
+                        <div class="timeline-role">Ayudante General</div>
+                        <ul class="item-description">
+                            <li>Atención al cliente, gestión eficiente de pedidos y control de inventario riguroso.</li>
+                        </ul>
                     </div>
-                    <div class="timeline-role">Ayudante General (IMSS Centro Vacacional La Malinche)</div>
-                    <ul class="item-description">
-                        <li>Aplicación rigurosa de normas de seguridad industrial y organización del espacio de trabajo.</li>
-                    </ul>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Grupo Constructor Gori y Asociados</div>
+                            <span class="timeline-date">Abril 2026 – Mayo 2026</span>
+                        </div>
+                        <div class="timeline-role">Ayudante General (Ciudad Modelo)</div>
+                        <ul class="item-description">
+                            <li>Soporte operativo bajo altos estándares de trabajo en equipo y cumplimiento estricto de plazos.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div class="timeline-title">Grupo Constructor Peralta</div>
+                            <span class="timeline-date">Julio 2025 – Agosto 2025</span>
+                        </div>
+                        <div class="timeline-role">Ayudante General (IMSS Centro Vacacional La Malinche)</div>
+                        <ul class="item-description">
+                            <li>Aplicación rigurosa de normas de seguridad industrial y organización del espacio de trabajo.</li>
+                        </ul>
+                    </div>
                 </div>
+            </section>
+        </main>
+    </div>
 
-            </div>
-        </section>
-
-    </main>
 </div>
 
 </body>
